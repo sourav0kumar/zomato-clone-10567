@@ -23,8 +23,8 @@ const Router = express.Router();
 Router.get("/:_id", async (req, res) => {
   try {
     const { _id } = req.params;
-    const foods = FoodModel.findById(_id);
-    return res.json({ foods });
+    const food =await FoodModel.findById(_id);
+    return res.json({ food });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
