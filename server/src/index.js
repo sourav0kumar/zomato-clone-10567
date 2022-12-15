@@ -6,6 +6,7 @@ import session from "express-session";
 
 // Private route authorization config
 import privateRouteConfig from "./config/route.config";
+import googleAuthConfig from "./config/google.config";
 
 import ConnectDb from "./database/connection";
 import Auth from "./api/auth";
@@ -24,11 +25,12 @@ dotenv.config();
 const zomato =express();
 //adding some additional config
 privateRouteConfig(passport);
+googleAuthConfig(passport);
 
 zomato.use(express.json());
-// zomato.use(session({ secret: "ZomatoApp" }));
+zomato.use(session({ secret: "ZomatoApp" }));
 zomato.use(passport.initialize());
-// zomato.use(passport.session());
+zomato.use(passport.session());
 
 zomato.get('/',(req,res)=>{
     res.json({
