@@ -15,7 +15,8 @@ import User from "./api/user";
 import Menu from "./api/menu";
 import Order from "./api/order";
 import Review from "./api/review";
-
+import Image from './api/image';
+// import Image from './api/image'
 
 dotenv.config();
 
@@ -25,9 +26,9 @@ const zomato =express();
 privateRouteConfig(passport);
 
 zomato.use(express.json());
-zomato.use(session({ secret: "ZomatoApp" }));
+// zomato.use(session({ secret: "ZomatoApp" }));
 zomato.use(passport.initialize());
-zomato.use(passport.session());
+// zomato.use(passport.session());
 
 zomato.get('/',(req,res)=>{
     res.json({
@@ -42,6 +43,8 @@ zomato.use("/user",  User);
 zomato.use("/menu", Menu);
 zomato.use("/order", Order);
 zomato.use("/review", Review);
+zomato.use("/image",Image);
+
 
 const PORT=4000;
 
