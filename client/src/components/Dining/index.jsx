@@ -1,10 +1,4 @@
-import React from "react";
 
-const Dining = () => {
-  return <div>Dining</div>;
-};
-
-export default Dining;
 import React from "react";
 
 // components
