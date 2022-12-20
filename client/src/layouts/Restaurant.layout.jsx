@@ -45,7 +45,7 @@ const RestaurantLayout = ({children:Component,...props})=> {
     deliveryRating: 3.2,
   });
     const { id } = useParams();
-    console.log(id);
+    
 
   return (
     <>
