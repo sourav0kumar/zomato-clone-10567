@@ -9,7 +9,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
     fullName: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { 
     setUserData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
