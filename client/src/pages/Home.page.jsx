@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{ useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
 import HomepageLayout from '../layouts/Homepage.layout';
@@ -8,8 +8,17 @@ import Delivery from "../components/Delivery";
 import Dining from "../components/Dining";
 import NightLife from "../components/NightLife";
 import Nutrition from "../components/Nutrition";
+
+// redux
+import { useDispatch } from "react-redux";
+import { getRestaurant } from "../redux/reducers/restaurant/restaurant.action";
 const Home = () => {
   const { type } = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRestaurant());
+  }, []);
 
   return (
     <>

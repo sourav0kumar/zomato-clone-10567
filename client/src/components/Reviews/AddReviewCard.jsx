@@ -8,13 +8,12 @@ const AddReviewCard = () => {
   const [type, setType] = useState("");
 
   const openModal = () => {
-    // if (!localStorage.zomatoUser) {
-    //   return alert("Please Sign In to post a review.");
-    // }
+    if (!localStorage.zomatoUser) {
+      return alert("Please Sign In to post a review.");
+    }
 
     setIsOpen(true);
   };
-  console.log('delivery');
 
   const getReviewType = (type) => {
     setType(type);

@@ -50,4 +50,3 @@ const MapView = (props) => {
 };
 
 export default MapView;
-

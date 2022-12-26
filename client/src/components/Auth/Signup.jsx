@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 
 // redux
 import { useDispatch } from "react-redux";
-import {  signUp } from "../../redux/reducers/auth/auth.action";
+import { signUp } from "../../redux/reducers/auth/auth.action";
 import { getMySelf } from "../../redux/reducers/user/user.action";
 
 const Signup = ({ isOpen, setIsOpen }) => {
@@ -14,23 +14,25 @@ const Signup = ({ isOpen, setIsOpen }) => {
     fullName: "",
   });
 
-  const handleChange = (e) => { 
+  const handleChange = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const closeModal = () => {
     setIsOpen(false);
   };
- const dispatch = useDispatch();
-  const submit = () => {
-    dispatch(signUp(userData));
-     dispatch(getMySelf());
+
+  const dispatch = useDispatch();
+
+  const submit = async () => {
+    await dispatch(signUp(userData));
+    await dispatch(getMySelf());
     closeModal();
     setUserData({ email: "", password: "", fullName: "" });
   };
 
   const googleSignUp = () =>
-    (window.location.href = "http://localhost:4000/auth/google");
+    (window.location.href = `${process.env.REACT_APP_CLIENT_URL}auth/google`);
 
   return (
     <>
