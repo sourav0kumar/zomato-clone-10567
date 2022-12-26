@@ -2,7 +2,7 @@
 import AWS from "aws-sdk";
 import multer from "multer";
 
-import { ImageModel } from "../../database/allModels";
+import { ImageModel } from "../../database/image";
 
 import { s3Upload } from "../../utils/s3";
 
@@ -22,6 +22,7 @@ const upload = multer({ storage });
 Router.get("/:_id", async (req, res) => {
   try {
     const image = await ImageModel.findById(req.params._id);
+   
 
     return res.json({ image });
   } catch (error) {
@@ -39,6 +40,7 @@ Router.get("/:_id", async (req, res) => {
 Router.post("/", upload.single("file"), async (req, res) => {
   try {
     const file = req.file;
+    
     const bucketOptions = {
       Bucket: "zomato-clone-10567",
       Key: file.originalname,

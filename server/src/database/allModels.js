@@ -3,7 +3,7 @@ import {ImageModel} from "./image"
 import {MenuModel} from "./menu"
 import {OrderModel} from "./order"
 import {ReviewModel} from "./review"
-import {ResturantModel} from "./resturant"
+import {RestaurantModel} from "./resturant"
 import {UserModel} from "./user"
 
 export{
@@ -12,7 +12,7 @@ ImageModel,
 MenuModel,
 OrderModel,
 ReviewModel,
-ResturantModel,
+RestaurantModel,
 UserModel,
 
 }

@@ -2,3 +2,9 @@
 /server/node_modules
 /server/.env
 /server/dist
+/client/.env
+/server/Dockerfile
+
+/client/node_modules
+/client/package-lock.json
+/client/.env
