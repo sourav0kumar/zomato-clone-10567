@@ -1,9 +1,9 @@
 # API Planning
 
--Food(food items and their details)
--Resturant(resturants and their details)
--Menu(menu ande its details)
--Order(Order and its details)
--Image(Storing the images related to project)
--Review(storing all the list of reviews)
--username(User related details,username,name,password)
+- Food (food items and their details)
+- Restaurant (restaurant and their details)
+- Menu (Menu and its details)
+- Order (Order and its details)
+- Image (Storing all the images related to the project)
+- Review (Storing all the list of reviews)
+- User (User related details, username, email, password)
