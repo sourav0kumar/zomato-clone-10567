@@ -27,9 +27,10 @@ const Checkout = () => {
   ];
 
   const payNow = () => {
-    console.log("hello")
     let options = {
-      key:"rzp_test_P9w6t63sEB3rMz",
+      key: "rzp_test_XYMnMHMqsTdS0E",
+      
+      
       amount:
         cart.reduce((total, current) => total + current.totalPrice, 0) * 100,
       currency: "INR",
@@ -48,8 +49,7 @@ const Checkout = () => {
       },
     };
 
-    let razorpay = new window.Razorpay({ options });
-    console.log(razorpay);
+    let razorpay = new window.Razorpay( options );
     razorpay.open();
   };
 

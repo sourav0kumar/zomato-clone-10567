@@ -4,7 +4,7 @@
 /server/dist
 /client/.env
 /server/Dockerfile
-
+/client/Dockerfile
 /client/node_modules
 /client/package-lock.json
 /client/.env
